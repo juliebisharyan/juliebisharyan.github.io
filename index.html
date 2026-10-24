@@ -4,165 +4,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Julietta Bisharyan, a freelance journalist based in San Diego.">
   <title>Julietta Bisharyan | Journalist</title>
+  <meta name="description" content="Portfolio of Julietta Bisharyan, a freelance reporter based in San Diego.">
 
   <style>
     :root {
-      --background: #fcfbf8;
-      --text: #242424;
-      --muted: #686868;
-      --accent: #315d50;
-      --rule: #dedbd4;
-      --width: 760px;
+      --bg: #f8f7f2;
+      --text: #292923;
+      --muted: #68685f;
+      --rule: #d9d7cd;
+      --accent: #8b3d2e;
+      --card: #fffefa;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: var(--background);
+      background: var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 17px;
       line-height: 1.7;
     }
 
-    .container {
-      width: min(var(--width), calc(100% - 44px));
+    .site-header,
+    main,
+    footer {
+      width: min(100% - 48px, 900px);
       margin: 0 auto;
     }
 
-    header {
+    .site-header {
       padding: 34px 0 0;
     }
 
-    .site-name {
-      color: var(--text);
-      font-size: 19px;
-      font-weight: bold;
-      text-decoration: none;
-      letter-spacing: -0.3px;
+    .site-title {
+      margin: 0;
+      font-size: 25px;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+    }
+
+    .site-subtitle {
+      margin: 2px 0 22px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 27px;
-      margin-top: 27px;
+      gap: 28px;
       border-bottom: 1px solid var(--rule);
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .tab {
-      display: inline-block;
-      padding: 0 0 12px;
+    .tab-button {
+      position: relative;
+      padding: 12px 0 14px;
       border: 0;
       border-bottom: 2px solid transparent;
       margin-bottom: -1px;
       background: transparent;
       color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
       cursor: pointer;
+      font: inherit;
+      font-size: 13px;
     }
 
-    .tab:hover,
-    .tab[aria-selected="true"] {
+    .tab-button:hover,
+    .tab-button[aria-selected="true"] {
       color: var(--text);
     }
 
-    .tab[aria-selected="true"] {
+    .tab-button[aria-selected="true"] {
       border-bottom-color: var(--accent);
     }
 
     main {
-      min-height: 65vh;
-      padding: 53px 0 75px;
+      min-height: 60vh;
+      padding: 44px 0 70px;
     }
 
-    h1 {
-      margin: 0 0 15px;
-      font-size: clamp(32px, 6vw, 43px);
+    section h1 {
+      margin: 0 0 18px;
+      font-size: 34px;
       font-weight: normal;
-      letter-spacing: -1.3px;
-      line-height: 1.2;
+      letter-spacing: -0.8px;
+      line-height: 1.25;
     }
 
-    .intro {
-      max-width: 650px;
-      margin: 0 0 22px;
-      font-size: 19px;
-      line-height: 1.65;
-    }
-
-    h2 {
-      margin: 37px 0 15px;
-      font-size: 22px;
+    section h2 {
       font-weight: normal;
-      letter-spacing: -0.3px;
     }
 
     p {
-      margin: 0 0 19px;
+      margin: 0 0 20px;
     }
 
-    a {
+    .intro {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .about-copy {
+      max-width: 700px;
+    }
+
+    .about-copy a,
+    .works-list a {
       color: var(--accent);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+      text-decoration: none;
     }
 
-    a:hover {
-      text-decoration-thickness: 2px;
+    .about-copy a:hover,
+    .works-list a:hover {
+      text-decoration: underline;
     }
 
-    .contact {
-      margin-top: 32px;
+    .section-label {
+      margin: 34px 0 12px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
     }
 
-    .work-section {
-      margin-top: 32px;
-    }
-
-    .work-section h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--rule);
-      font-size: 21px;
-    }
-
-    .work-list {
-      margin: 0;
+    .works-list {
+      max-width: 760px;
       padding: 0;
+      margin: 28px 0 0;
       list-style: none;
     }
 
-    .work-list li {
-      padding: 13px 0 15px;
-      border-bottom: 1px solid #ebe8e2;
+    .works-list li {
+      padding: 19px 0;
+      border-top: 1px solid var(--rule);
     }
 
-    .work-title {
-      display: inline;
-      font-size: 17px;
-      line-height: 1.55;
+    .works-list a {
+      font-size: 20px;
     }
 
     .publication {
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       line-height: 1.5;
-      letter-spacing: 0.15px;
+    }
+
+    /* Data project boxes */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .data-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid var(--rule);
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .data-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .data-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      padding: 20px;
+      background: #eeece5;
+      color: #77776f;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .data-card-content {
+      padding: 17px 17px 20px;
+    }
+
+    .data-category {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .data-card h2 {
+      margin: 0 0 9px;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .data-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .data-link {
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
     }
 
     footer {
@@ -177,461 +245,252 @@
       display: none !important;
     }
 
-    @media (max-width: 500px) {
-      body {
-        font-size: 16px;
-      }
-
-      .container {
-        width: calc(100% - 36px);
-      }
-
-      header {
-        padding-top: 25px;
-      }
-
-      main {
-        padding-top: 39px;
+    @media (max-width: 560px) {
+      .site-header,
+      main,
+      footer {
+        width: min(100% - 32px, 900px);
       }
 
       nav {
-        gap: 23px;
+        gap: 22px;
       }
 
-      .intro {
-        font-size: 18px;
+      section h1 {
+        font-size: 30px;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <header class="site-header">
+    <p class="site-title">Julietta Bisharyan</p>
+    <p class="site-subtitle">Journalist · San Diego, California</p>
 
-    <header>
-      <a class="site-name" href="#about" id="home-link">
-        Julietta Bisharyan
-      </a>
+    <nav role="tablist" aria-label="Portfolio sections">
+      <button
+        class="tab-button"
+        id="about-tab"
+        role="tab"
+        aria-controls="about"
+        aria-selected="true"
+        type="button">
+        About Me
+      </button>
 
-      <nav aria-label="Main navigation" role="tablist">
-        <button
-          class="tab"
-          id="about-tab"
-          role="tab"
-          aria-selected="true"
-          aria-controls="about"
-          type="button">
-          About Me
-        </button>
+      <button
+        class="tab-button"
+        id="works-tab"
+        role="tab"
+        aria-controls="works"
+        aria-selected="false"
+        type="button"
+        tabindex="-1">
+        Selected Works
+      </button>
 
-        <button
-          class="tab"
-          id="works-tab"
-          role="tab"
-          aria-selected="false"
-          aria-controls="works"
-          type="button">
-          Selected Works
-        </button>
+      <button
+        class="tab-button"
+        id="data-tab"
+        role="tab"
+        aria-controls="data"
+        aria-selected="false"
+        type="button"
+        tabindex="-1">
+        Data
+      </button>
+    </nav>
+  </header>
 
-        <button
-          class="tab"
-          id="data-tab"
-          role="tab"
-          aria-selected="false"
-          aria-controls="data"
-          type="button">
-          Data
-        </button>
-      </nav>
-    </header>
+  <main>
+    <!-- ABOUT ME -->
+    <section
+      id="about"
+      role="tabpanel"
+      aria-labelledby="about-tab">
+      <h1>About Me</h1>
 
-    <main>
-
-      <!-- ABOUT ME -->
-      <section
-        id="about"
-        role="tabpanel"
-        aria-labelledby="about-tab">
-
-        <h1>About Me</h1>
-
+      <div class="about-copy">
         <p>
           Julietta Bisharyan is a freelance reporter based in San Diego.
-          She holds a bachelor’s degree in English from the University
-          of California, Davis and a master’s degree in multimedia
-          journalism from the University of California, Berkeley.
+          She holds a bachelor’s degree in English from the University of
+          California, Davis, and a master’s degree in multimedia journalism
+          from the University of California, Berkeley.
         </p>
 
         <p>
-          Her work has been published in The Modesto Bee,
-          The Sacramento Bee, East Bay Times, Berkeleyside,
-          AfroLA and Armenian Weekly.
+          Her work has been published in The Modesto Bee, The Sacramento Bee,
+          East Bay Times, Berkeleyside, AfroLA and Armenian Weekly.
         </p>
 
-        <p class="contact">
-          Email:
-          <a href="mailto:jsbisharyan@gmail.com">jsbisharyan@gmail.com</a>
+        <p>
+          Contact: <a href="mailto:jsbisharyan@gmail.com">jsbisharyan@gmail.com</a>
         </p>
+      </div>
+    </section>
 
-      </section>
+    <!-- SELECTED WORKS -->
+    <section
+      id="works"
+      role="tabpanel"
+      aria-labelledby="works-tab"
+      hidden>
+      <h1>Selected Works</h1>
 
-      <!-- SELECTED WORKS -->
-      <section
-        id="works"
-        role="tabpanel"
-        aria-labelledby="works-tab"
-        hidden>
+      <p class="intro">
+        A selection of my reporting on equity, education, housing,
+        the environment and public health.
+      </p>
 
-        <h1>Selected Works</h1>
+      <ul class="works-list">
+        <li>
+          <a href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
+             target="_blank" rel="noopener noreferrer">
+            L.A. County Doesn’t Have Enough Teachers. Low Pay and Burnout Aren’t Helping the Problem.
+          </a>
+          <span class="publication">AfroLA News</span>
+        </li>
 
-        <div class="work-section">
-          <h2>Investigations & Accountability</h2>
-          <ul class="work-list">
+        <li>
+          <a href="https://www.modbee.com/news/local/article288664865.html"
+             target="_blank" rel="noopener noreferrer">
+            Use of Force by Modesto Police
+          </a>
+          <span class="publication">The Modesto Bee · Co-reported</span>
+        </li>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article301118729.html"
-                target="_blank" rel="noopener noreferrer">
-                Employees at Modesto company seek nearly $629K from owner
-                in unpaid wages. More come forward
-              </a>
-              <span class="publication">The Modesto Bee · February 2025</span>
-            </li>
+        <li>
+          <a href="https://www.modbee.com/news/politics-government/article316693413.html"
+             target="_blank" rel="noopener noreferrer">
+            Complaint Data
+          </a>
+          <span class="publication">The Modesto Bee</span>
+        </li>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article288664865.html"
-                target="_blank" rel="noopener noreferrer">
-                Black residents experienced disproportionate use of force
-                by Modesto police over past decade
-              </a>
-              <span class="publication">The Modesto Bee · June 2024 · Co-reported</span>
-            </li>
+        <li>
+          <a href="https://www.modbee.com/news/politics-government/article314810141.html"
+             target="_blank" rel="noopener noreferrer">
+            Top City Earners
+          </a>
+          <span class="publication">The Modesto Bee</span>
+        </li>
+      </ul>
+    </section>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article309389265.html"
-                target="_blank" rel="noopener noreferrer">
-                Modesto police chief accepts most oversight recommendations,
-                rejects three
-              </a>
-              <span class="publication">The Modesto Bee · June 2025</span>
-            </li>
+    <!-- DATA -->
+    <section
+      id="data"
+      role="tabpanel"
+      aria-labelledby="data-tab"
+      hidden>
+      <h1>Data Analysis & Visualization</h1>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article291511825.html"
-                target="_blank" rel="noopener noreferrer">
-                Will Modesto police issue a study on bias toward Black
-                residents? Chief is hesitant
-              </a>
-              <span class="publication">The Modesto Bee · August 2024</span>
-            </li>
+      <div class="data-grid">
+        <a class="data-card"
+           href="https://www.modbee.com/news/politics-government/article316693413.html"
+           target="_blank" rel="noopener noreferrer">
+          <div class="data-image">Photo or visualization coming soon</div>
+          <div class="data-card-content">
+            <div class="data-category">Data analysis</div>
+            <h2>Complaint Data</h2>
+            <p>Reporting and analysis examining complaint data.</p>
+            <span class="data-link">Read the story ↗</span>
+            <span class="publication">The Modesto Bee</span>
+          </div>
+        </a>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article315187543.html"
-                target="_blank" rel="noopener noreferrer">
-                ACLU sues Modesto and its police chief over controversial
-                mask ban at protests
-              </a>
-              <span class="publication">The Modesto Bee · March 2026</span>
-            </li>
+        <a class="data-card"
+           href="https://www.modbee.com/news/politics-government/article314810141.html"
+           target="_blank" rel="noopener noreferrer">
+          <div class="data-image">Photo or visualization coming soon</div>
+          <div class="data-card-content">
+            <div class="data-category">Government</div>
+            <h2>Top City Earners</h2>
+            <p>A data-focused look at the highest-paid city employees.</p>
+            <span class="data-link">Read the story ↗</span>
+            <span class="publication">The Modesto Bee</span>
+          </div>
+        </a>
 
-            <li>
-              <a class="work-title"
-                href="https://www.mercedsunstar.com/news/local/education/uc-merced/article315497840.html"
-                target="_blank" rel="noopener noreferrer">
-                Records show UC Merced police are sharing license plate
-                data with Border Patrol
-              </a>
-              <span class="publication">Merced Sun-Star · April 2026 · Co-reported with Aysha Pettigrew</span>
-            </li>
+        <a class="data-card"
+           href="https://www.modbee.com/news/local/article288664865.html"
+           target="_blank" rel="noopener noreferrer">
+          <div class="data-image">Photo or visualization coming soon</div>
+          <div class="data-card-content">
+            <div class="data-category">Police accountability</div>
+            <h2>Use of Force by Modesto Police</h2>
+            <p>
+              An investigation into racial disparities in police use of force
+              over a decade.
+            </p>
+            <span class="data-link">Read the story ↗</span>
+            <span class="publication">The Modesto Bee · Co-reported</span>
+          </div>
+        </a>
 
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article315043571.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on automated license plate readers in Modesto
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article316693413.html"
-                target="_blank" rel="noopener noreferrer">
-                Analysis of complaint data
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article314810141.html"
-                target="_blank" rel="noopener noreferrer">
-                Analysis of top city earners
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/turlock/article316349082.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on Turlock's city manager
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/crime/article313927363.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on hate crimes
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="work-section">
-          <h2>Environment & Public Health</h2>
-          <ul class="work-list">
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/living/health-fitness/article312908189.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on pesticide drift near schools
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/business/agriculture/article306010386.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on pesticide drift and agricultural communities
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="work-section">
-          <h2>Education & Equity</h2>
-          <ul class="work-list">
-
-            <li>
-              <a class="work-title"
-                href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
-                target="_blank" rel="noopener noreferrer">
-                L.A. County doesn't have enough teachers. Low pay and
-                burnout aren't helping the problem
-              </a>
-              <span class="publication">AfroLA News · August 2023</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/education/article308581975.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on racism at Stanislaus State
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article301944214.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on Head Start
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article313170604.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on high school sports and the CIF
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="work-section">
-          <h2>Immigration & Government</h2>
-          <ul class="work-list">
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article315256014.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on ICE arrests
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/crime/article312073845.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on ICE transfers
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article312340162.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on Homeland Security Investigations
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.sacbee.com/news/california/article312117314.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on BJs
-              </a>
-              <span class="publication">The Sacramento Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article310501180.html"
-                target="_blank" rel="noopener noreferrer">
-                Reporting on Sen. Marie Alvarado-Gil
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-          </ul>
-        </div>
-
-      </section>
-
-      <!-- DATA -->
-      <section
-        id="data"
-        role="tabpanel"
-        aria-labelledby="data-tab"
-        hidden>
-
-        <h1>Data Visualizations & Analysis </h1>
-
-       
-
-        <div class="work-section">
-          <ul class="work-list">
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article316693413.html"
-                target="_blank" rel="noopener noreferrer">
-                Analysis of complaint data
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/politics-government/article314810141.html"
-                target="_blank" rel="noopener noreferrer">
-                Analysis of top city earners
-              </a>
-              <span class="publication">The Modesto Bee</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://www.modbee.com/news/local/article288664865.html"
-                target="_blank" rel="noopener noreferrer">
-                Black residents experienced disproportionate use of force
-                by Modesto police over past decade
-              </a>
-              <span class="publication">The Modesto Bee · June 2024 · Co-reported</span>
-            </li>
-
-            <li>
-              <a class="work-title"
-                href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
-                target="_blank" rel="noopener noreferrer">
-                L.A. County doesn't have enough teachers. Low pay and
-                burnout aren't helping the problem
-              </a>
-              <span class="publication">AfroLA News · August 2023</span>
-            </li>
-
-          </ul>
-        </div>
-
-      </section>
-
-    </main>
-
-  </div>
+        <a class="data-card"
+           href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
+           target="_blank" rel="noopener noreferrer">
+          <div class="data-image">Photo or visualization coming soon</div>
+          <div class="data-card-content">
+            <div class="data-category">Education</div>
+            <h2>Teacher Shortages in Los Angeles County</h2>
+            <p>Reporting on teacher shortages, low pay and burnout.</p>
+            <span class="data-link">Read the story ↗</span>
+            <span class="publication">AfroLA News</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <script>
-    const tabs = {
-      about: document.getElementById("about-tab"),
-      works: document.getElementById("works-tab"),
-      data: document.getElementById("data-tab")
-    };
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
 
-    const panels = {
-      about: document.getElementById("about"),
-      works: document.getElementById("works"),
-      data: document.getElementById("data")
-    };
-
-    function showTab(name) {
-      Object.keys(tabs).forEach(function (key) {
-        const active = key === name;
-
-        tabs[key].setAttribute("aria-selected", String(active));
-        panels[key].hidden = !active;
+    function activateTab(tab) {
+      tabs.forEach((item) => {
+        const isSelected = item === tab;
+        item.setAttribute('aria-selected', String(isSelected));
+        item.tabIndex = isSelected ? 0 : -1;
       });
 
-      history.replaceState(null, "", "#" + name);
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      });
     }
 
-    tabs.about.addEventListener("click", function () {
-      showTab("about");
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+
+      tab.addEventListener('keydown', (event) => {
+        let nextIndex = index;
+
+        if (event.key === 'ArrowRight') {
+          nextIndex = (index + 1) % tabs.length;
+        } else if (event.key === 'ArrowLeft') {
+          nextIndex = (index - 1 + tabs.length) % tabs.length;
+        } else if (event.key === 'Home') {
+          nextIndex = 0;
+        } else if (event.key === 'End') {
+          nextIndex = tabs.length - 1;
+        } else {
+          return;
+        }
+
+        event.preventDefault();
+        tabs[nextIndex].focus();
+        activateTab(tabs[nextIndex]);
+      });
     });
 
-    tabs.works.addEventListener("click", function () {
-      showTab("works");
-    });
-
-    tabs.data.addEventListener("click", function () {
-      showTab("data");
-    });
-
-    document.getElementById("home-link").addEventListener("click", function () {
-      showTab("about");
-    });
-
-    const initialTab = window.location.hash.slice(1);
-
-    if (Object.prototype.hasOwnProperty.call(panels, initialTab)) {
-      showTab(initialTab);
-    } else {
-      showTab("about");
-    }
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
