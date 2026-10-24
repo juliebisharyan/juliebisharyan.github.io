@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of a California-based journalist covering equity, accountability, environment and public health.">
+  <meta name="description" content="Portfolio of Julietta Bisharyan, a freelance journalist based in San Diego.">
   <title>Julietta Bisharyan | Journalist</title>
 
   <style>
@@ -53,6 +53,7 @@
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 27px;
       margin-top: 27px;
       border-bottom: 1px solid var(--rule);
@@ -86,7 +87,7 @@
     }
 
     h1 {
-      margin: 0 0 9px;
+      margin: 0 0 15px;
       font-size: clamp(32px, 6vw, 43px);
       font-weight: normal;
       letter-spacing: -1.3px;
@@ -98,14 +99,6 @@
       margin: 0 0 22px;
       font-size: 19px;
       line-height: 1.65;
-    }
-
-    .location {
-      margin: 0 0 34px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.2px;
     }
 
     h2 {
@@ -172,14 +165,6 @@
       letter-spacing: 0.15px;
     }
 
-    .note {
-      margin-top: 23px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
     footer {
       padding: 20px 0 30px;
       border-top: 1px solid var(--rule);
@@ -222,6 +207,7 @@
 
 <body>
   <div class="container">
+
     <header>
       <a class="site-name" href="#about" id="home-link">
         Julietta Bisharyan
@@ -247,31 +233,48 @@
           type="button">
           Selected Works
         </button>
+
+        <button
+          class="tab"
+          id="data-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="data"
+          type="button">
+          Data
+        </button>
       </nav>
     </header>
 
     <main>
+
       <!-- ABOUT ME -->
       <section
         id="about"
         role="tabpanel"
         aria-labelledby="about-tab">
+
+        <h1>About Me</h1>
+
         <p>
-          Julietta Bisharyan is a freelance reporter based in San Diego. She holds a bachelor’s degree in English from the University of California, Davis and a master’s degree in multimedia journalism from the University of California, Berkeley. 
-
-
+          Julietta Bisharyan is a freelance reporter based in San Diego.
+          She holds a bachelor’s degree in English from the University
+          of California, Davis and a master’s degree in multimedia
+          journalism from the University of California, Berkeley.
         </p>
 
         <p>
-          Her work has been published in The Modesto Bee, The Sacramento Bee, East Bay Times, Berkeleyside, AfroLA and Armenian Weekly.
+          Her work has been published in The Modesto Bee,
+          The Sacramento Bee, East Bay Times, Berkeleyside,
+          AfroLA and Armenian Weekly.
         </p>
 
+        <p class="contact">
+          Email:
+          <a href="mailto:jsbisharyan@gmail.com">jsbisharyan@gmail.com</a>
+        </p>
 
-
-       <p class="contact">
-  Email:
-  <a href="mailto:jsbisharyan@gmail.com">jsbisharyan@gmail.com</a>
-</p>
+      </section>
 
       <!-- SELECTED WORKS -->
       <section
@@ -281,8 +284,9 @@
         hidden>
 
         <h1>Selected Works</h1>
+
         <div class="work-section">
-          <h2>Investigations</h2>
+          <h2>Investigations & Accountability</h2>
           <ul class="work-list">
 
             <li>
@@ -463,7 +467,7 @@
         </div>
 
         <div class="work-section">
-          <h2>Policy<h2>
+          <h2>Immigration & Government</h2>
           <ul class="work-list">
 
             <li>
@@ -513,39 +517,129 @@
 
           </ul>
         </div>
+
       </section>
+
+      <!-- DATA -->
+      <section
+        id="data"
+        role="tabpanel"
+        aria-labelledby="data-tab"
+        hidden>
+
+        <h1>Data</h1>
+
+        <p class="intro">
+          Data-driven reporting and investigations using public records,
+          original analysis and quantitative research.
+        </p>
+
+        <div class="work-section">
+          <h2>Data & Analysis</h2>
+          <ul class="work-list">
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article316693413.html"
+                target="_blank" rel="noopener noreferrer">
+                Analysis of complaint data
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article314810141.html"
+                target="_blank" rel="noopener noreferrer">
+                Analysis of top city earners
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article288664865.html"
+                target="_blank" rel="noopener noreferrer">
+                Black residents experienced disproportionate use of force
+                by Modesto police over past decade
+              </a>
+              <span class="publication">The Modesto Bee · June 2024 · Co-reported</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
+                target="_blank" rel="noopener noreferrer">
+                L.A. County doesn't have enough teachers. Low pay and
+                burnout aren't helping the problem
+              </a>
+              <span class="publication">AfroLA News · August 2023</span>
+            </li>
+
+          </ul>
+        </div>
+
+      </section>
+
     </main>
+
+    <footer>
+      © <span id="year"></span> Julietta Bisharyan
+    </footer>
+
   </div>
 
   <script>
-    const aboutTab = document.getElementById("about-tab");
-    const worksTab = document.getElementById("works-tab");
-    const aboutPanel = document.getElementById("about");
-    const worksPanel = document.getElementById("works");
-    const homeLink = document.getElementById("home-link");
+    const tabs = {
+      about: document.getElementById("about-tab"),
+      works: document.getElementById("works-tab"),
+      data: document.getElementById("data-tab")
+    };
 
-    function showTab(tab) {
-      const showAbout = tab === "about";
+    const panels = {
+      about: document.getElementById("about"),
+      works: document.getElementById("works"),
+      data: document.getElementById("data")
+    };
 
-      aboutPanel.hidden = !showAbout;
-      worksPanel.hidden = showAbout;
+    function showTab(name) {
+      Object.keys(tabs).forEach(function (key) {
+        const active = key === name;
 
-      aboutTab.setAttribute("aria-selected", String(showAbout));
-      worksTab.setAttribute("aria-selected", String(!showAbout));
+        tabs[key].setAttribute("aria-selected", String(active));
+        panels[key].hidden = !active;
+      });
 
-      history.replaceState(null, "", showAbout ? "#about" : "#works");
+      history.replaceState(null, "", "#" + name);
     }
 
-    aboutTab.addEventListener("click", () => showTab("about"));
-    worksTab.addEventListener("click", () => showTab("works"));
-    homeLink.addEventListener("click", () => showTab("about"));
+    tabs.about.addEventListener("click", function () {
+      showTab("about");
+    });
 
-    if (window.location.hash === "#works") {
+    tabs.works.addEventListener("click", function () {
       showTab("works");
+    });
+
+    tabs.data.addEventListener("click", function () {
+      showTab("data");
+    });
+
+    document.getElementById("home-link").addEventListener("click", function () {
+      showTab("about");
+    });
+
+    const initialTab = window.location.hash.slice(1);
+
+    if (Object.prototype.hasOwnProperty.call(panels, initialTab)) {
+      showTab(initialTab);
+    } else {
+      showTab("about");
     }
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
+
 </body>
 </html>
