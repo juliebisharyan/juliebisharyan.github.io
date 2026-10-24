@@ -1,95 +1,589 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Julietta Bisharyan is a California-based freelance journalist covering education, environmental justice, public health and inequality.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of a California-based journalist covering equity, accountability, environment and public health.">
   <title>Julietta Bisharyan | Journalist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --background: #fcfbf8;
+      --text: #242424;
+      --muted: #686868;
+      --accent: #315d50;
+      --rule: #dedbd4;
+      --width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(var(--width), calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 34px 0 0;
+    }
+
+    .site-name {
+      color: var(--text);
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 27px;
+      margin-top: 27px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 0 0 12px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      background: transparent;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .tab:hover,
+    .tab[aria-selected="true"] {
+      color: var(--text);
+    }
+
+    .tab[aria-selected="true"] {
+      border-bottom-color: var(--accent);
+    }
+
+    main {
+      min-height: 65vh;
+      padding: 53px 0 75px;
+    }
+
+    h1 {
+      margin: 0 0 9px;
+      font-size: clamp(32px, 6vw, 43px);
+      font-weight: normal;
+      letter-spacing: -1.3px;
+      line-height: 1.2;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .location {
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    h2 {
+      margin: 37px 0 15px;
+      font-size: 22px;
+      font-weight: normal;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      margin: 0 0 19px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .contact {
+      margin-top: 32px;
+    }
+
+    .work-section {
+      margin-top: 32px;
+    }
+
+    .work-section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 21px;
+    }
+
+    .work-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work-list li {
+      padding: 13px 0 15px;
+      border-bottom: 1px solid #ebe8e2;
+    }
+
+    .work-title {
+      display: inline;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .publication {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: 0.15px;
+    }
+
+    .note {
+      margin-top: 23px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 20px 0 30px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      header {
+        padding-top: 25px;
+      }
+
+      main {
+        padding-top: 39px;
+      }
+
+      nav {
+        gap: 23px;
+      }
+
+      .intro {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="topline"><span>INDEPENDENT JOURNALISM</span><span>CALIFORNIA · USA</span></div>
-    <div class="masthead"><a href="index.html" class="wordmark">Julietta Bisharyan</a><p>Reporter · Writer · Data journalism</p></div>
-    <nav aria-label="Main navigation">
-      <a href="#work">Selected work</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <a class="site-name" href="#about" id="home-link">
+        Julietta Bisharyan
+      </a>
 
-  <main id="main">
-    <section class="intro">
-      <p class="eyebrow">Freelance reporter based in San Diego</p>
-      <h1>Stories about the systems shaping <em>people’s lives.</em></h1>
-      <p class="intro-copy">I report on education, environmental justice, public health, housing and inequality, with a focus on accountability, data and the people most affected by policy decisions.</p>
-      <a class="text-link" href="#work">Explore selected reporting <span aria-hidden="true">↓</span></a>
-    </section>
+      <nav aria-label="Main navigation" role="tablist">
+        <button
+          class="tab"
+          id="about-tab"
+          role="tab"
+          aria-selected="true"
+          aria-controls="about"
+          type="button">
+          About Me
+        </button>
 
-    <section class="work-section" id="work">
-      <div class="section-heading"><div><p class="eyebrow">The portfolio</p><h2>Selected work</h2></div><p class="section-note">A selection of reported stories across beats. Replace the sample entries below with your published clips.</p></div>
-      <div class="story-list">
-        <article class="story">
-          <div class="story-number">01</div>
-          <div class="story-body"><p class="category">Environment · Public health</p><h3><a href="#" class="clip-link">Pesticide exposure and the communities living with its consequences</a></h3><p class="dek">Reporting on pesticide use in California’s agricultural communities, its effects on residents and efforts to increase transparency and oversight.</p><p class="meta">The Modesto Bee / McClatchy <span>·</span> Replace with publication date</p></div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </article>
-        <article class="story">
-          <div class="story-number">02</div>
-          <div class="story-body"><p class="category">Education · Equity</p><h3><a href="#" class="clip-link">The challenges facing California schools and educators</a></h3><p class="dek">Coverage of teacher shortages, school systems and the policy decisions affecting students and communities.</p><p class="meta">Published reporting <span>·</span> Replace with outlet and date</p></div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </article>
-        <article class="story">
-          <div class="story-number">03</div>
-          <div class="story-body"><p class="category">Housing · Community</p><h3><a href="#" class="clip-link">How housing costs and neighborhood change affect families</a></h3><p class="dek">Local reporting on affordability, community change and the forces shaping who can remain in California neighborhoods.</p><p class="meta">Freelance reporting <span>·</span> Replace with outlet and date</p></div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </article>
-        <article class="story">
-          <div class="story-number">04</div>
-          <div class="story-body"><p class="category">Investigations · Data</p><h3><a href="#" class="clip-link">Using public records and data to hold institutions accountable</a></h3><p class="dek">Data-driven reporting that examines government decisions, public policy and their real-world effects.</p><p class="meta">Selected investigation <span>·</span> Replace with outlet and date</p></div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </article>
-        <article class="story">
-          <div class="story-number">05</div>
-          <div class="story-body"><p class="category">California · Environment</p><h3><a href="#" class="clip-link">Agriculture, drought and a changing climate</a></h3><p class="dek">Reporting on the intersection of California agriculture, environmental pressures and public health.</p><p class="meta">Selected reporting <span>·</span> Replace with outlet and date</p></div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </article>
-      </div>
-      <p class="editing-note"><strong>Before publishing:</strong> These are descriptive placeholders, not verified article headlines. Add your actual headline, outlet, date and article URL; delete any entry that doesn’t fit a published clip.</p>
-    </section>
+        <button
+          class="tab"
+          id="works-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="works"
+          type="button">
+          Selected Works
+        </button>
+      </nav>
+    </header>
 
-    <section class="about-section" id="about">
-      <p class="eyebrow">A little about me</p>
-      <h2>Reporting with context, care and accountability.</h2>
-      <div class="about-grid">
-        <p>I’m a California-based freelance reporter. I began my journalism career as a student at UC Davis and earned a master’s degree from UC Berkeley, where I focused on data and investigative journalism.</p>
-        <p>I spent nearly three years as an equity reporter with McClatchy Media, writing primarily for The Modesto Bee. My work has explored the ways policy and institutions affect people’s lives, including issues at the intersection of environment, agriculture and public health.</p>
-      </div>
-      <p class="about-footnote">Please review this biography for accuracy and adjust it to reflect your current work and preferred description.</p>
-    </section>
+    <main>
+      <!-- ABOUT ME -->
+      <section
+        id="about"
+        role="tabpanel"
+        aria-labelledby="about-tab">
 
-    <section class="contact-section" id="contact">
-      <p class="eyebrow">Get in touch</p>
-      <h2>Have a story idea?</h2>
-      <p>I’m available for freelance assignments, collaborations and reporting tips.</p>
-      <a class="contact-link" href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com <span aria-hidden="true">↗</span></a>
-    </section>
-  </main>
+        <h1>About Me</h1>
 
-  <footer><span>© <span id="year">2026</span> Julietta Bisharyan</span><span>Independent journalism · California</span></footer>
+        <p class="intro">
+          I'm a freelance journalist based in San Diego, California,
+          reporting on equity, government accountability, the environment
+          and public health.
+        </p>
+
+        <p class="location">San Diego, California</p>
+
+        <p>
+          I began my journalism career as a student at UC Davis and earned
+          a master's degree from UC Berkeley, where I focused on data and
+          investigative journalism. I spent nearly three years as an
+          equity reporter for McClatchy Media, writing primarily for
+          The Modesto Bee.
+        </p>
+
+        <p>
+          My reporting has examined the effects of pesticide exposure
+          on agricultural communities, law enforcement practices,
+          immigration enforcement, education and disparities in access
+          to public resources.
+        </p>
+
+        <p>
+          I'm interested in accountability journalism that shows how
+          policy decisions and institutions affect people's lives,
+          particularly in underserved communities. I also enjoy using
+          data and public records to uncover stories that might
+          otherwise go overlooked.
+        </p>
+
+        <p class="contact">
+          For tips, story ideas or freelance opportunities, please
+          <a href="mailto:YOUR_EMAIL_HERE">get in touch</a>.
+        </p>
+      </section>
+
+      <!-- SELECTED WORKS -->
+      <section
+        id="works"
+        role="tabpanel"
+        aria-labelledby="works-tab"
+        hidden>
+
+        <h1>Selected Works</h1>
+
+        <p class="intro">
+          A selection of my reporting on accountability, equity,
+          the environment and public health.
+        </p>
+
+        <div class="work-section">
+          <h2>Investigations & Accountability</h2>
+          <ul class="work-list">
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article301118729.html"
+                target="_blank" rel="noopener noreferrer">
+                Employees at Modesto company seek nearly $629K from owner
+                in unpaid wages. More come forward
+              </a>
+              <span class="publication">The Modesto Bee · February 2025</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article288664865.html"
+                target="_blank" rel="noopener noreferrer">
+                Black residents experienced disproportionate use of force
+                by Modesto police over past decade
+              </a>
+              <span class="publication">The Modesto Bee · June 2024 · Co-reported</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article309389265.html"
+                target="_blank" rel="noopener noreferrer">
+                Modesto police chief accepts most oversight recommendations,
+                rejects three
+              </a>
+              <span class="publication">The Modesto Bee · June 2025</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article291511825.html"
+                target="_blank" rel="noopener noreferrer">
+                Will Modesto police issue a study on bias toward Black
+                residents? Chief is hesitant
+              </a>
+              <span class="publication">The Modesto Bee · August 2024</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article315187543.html"
+                target="_blank" rel="noopener noreferrer">
+                ACLU sues Modesto and its police chief over controversial
+                mask ban at protests
+              </a>
+              <span class="publication">The Modesto Bee · March 2026</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.mercedsunstar.com/news/local/education/uc-merced/article315497840.html"
+                target="_blank" rel="noopener noreferrer">
+                Records show UC Merced police are sharing license plate
+                data with Border Patrol
+              </a>
+              <span class="publication">Merced Sun-Star · April 2026 · Co-reported with Aysha Pettigrew</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article315043571.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on automated license plate readers in Modesto
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article316693413.html"
+                target="_blank" rel="noopener noreferrer">
+                Analysis of complaint data
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article314810141.html"
+                target="_blank" rel="noopener noreferrer">
+                Analysis of top city earners
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/turlock/article316349082.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on Turlock's city manager
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/crime/article313927363.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on hate crimes
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="work-section">
+          <h2>Environment & Public Health</h2>
+          <ul class="work-list">
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/living/health-fitness/article312908189.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on pesticide drift near schools
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/business/agriculture/article306010386.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on pesticide drift and agricultural communities
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="work-section">
+          <h2>Education & Equity</h2>
+          <ul class="work-list">
+
+            <li>
+              <a class="work-title"
+                href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
+                target="_blank" rel="noopener noreferrer">
+                L.A. County doesn't have enough teachers. Low pay and
+                burnout aren't helping the problem
+              </a>
+              <span class="publication">AfroLA News · August 2023</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/education/article308581975.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on racism at Stanislaus State
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article301944214.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on Head Start
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article313170604.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on high school sports and the CIF
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="work-section">
+          <h2>Immigration & Government</h2>
+          <ul class="work-list">
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/article315256014.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on ICE arrests
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/local/crime/article312073845.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on ICE transfers
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article312340162.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on Homeland Security Investigations
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.sacbee.com/news/california/article312117314.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on BJs
+              </a>
+              <span class="publication">The Sacramento Bee</span>
+            </li>
+
+            <li>
+              <a class="work-title"
+                href="https://www.modbee.com/news/politics-government/article310501180.html"
+                target="_blank" rel="noopener noreferrer">
+                Reporting on Sen. Marie Alvarado-Gil
+              </a>
+              <span class="publication">The Modesto Bee</span>
+            </li>
+
+          </ul>
+        </div>
+
+        <p class="note">
+          Some headlines above are working descriptions and should be
+          replaced with the published headlines before the site goes live.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Julietta Bisharyan
+    </footer>
+  </div>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Prevent placeholder links from jumping to the top before you replace them.
-    document.querySelectorAll('.clip-link').forEach(link => {
-      link.addEventListener('click', event => {
-        if (link.getAttribute('href') === '#') {
-          event.preventDefault();
-          alert('Replace this placeholder with the URL of your published story first.');
-        }
-      });
-    });
+    const aboutTab = document.getElementById("about-tab");
+    const worksTab = document.getElementById("works-tab");
+    const aboutPanel = document.getElementById("about");
+    const worksPanel = document.getElementById("works");
+    const homeLink = document.getElementById("home-link");
+
+    function showTab(tab) {
+      const showAbout = tab === "about";
+
+      aboutPanel.hidden = !showAbout;
+      worksPanel.hidden = showAbout;
+
+      aboutTab.setAttribute("aria-selected", String(showAbout));
+      worksTab.setAttribute("aria-selected", String(!showAbout));
+
+      history.replaceState(null, "", showAbout ? "#about" : "#works");
+    }
+
+    aboutTab.addEventListener("click", () => showTab("about"));
+    worksTab.addEventListener("click", () => showTab("works"));
+    homeLink.addEventListener("click", () => showTab("about"));
+
+    if (window.location.hash === "#works") {
+      showTab("works");
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 </body>
 </html>
