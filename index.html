@@ -1,259 +1,982 @@
-<!-- DATA PROJECTS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Julietta Bisharyan, a California-based journalist covering education, equity, accountability and the environment.">
+  <title>Julietta Bisharyan | Journalist</title>
 
-<section id="data" role="tabpanel"
-  aria-labelledby="data-tab" hidden>
+  <style>
+    :root {
+      --background: #f0f4f8;
+      --text: #242424;
+      --muted: #77736d;
+      --accent: #315f8f;
+      --rule: #dedbd4;
+      --width: 900px;
+    }
 
-  <h1 class="data-heading">Data &amp; Projects</h1>
+    * {
+      box-sizing: border-box;
+    }
 
-  <div class="data-grid">
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <!-- PROJECT 1 -->
-    <a class="data-card"
-      href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
-      target="_blank" rel="noopener noreferrer">
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
 
-      <div class="data-image">
-        <img src="assets/LACounty.png" alt="Data visualization about teacher shortages in Los Angeles County">
-      </div>
+    .container {
+      width: min(var(--width), calc(100% - 44px));
+      margin: 0 auto;
+    }
 
-      <div class="data-card-content">
-        <h3>L.A. County doesn’t have enough teachers. Low pay and burnout aren’t helping the problem</h3>
-        <p class="data-publication">AfroLA News · August 2023</p>
-        <p class="data-description">
-          Examining teacher shortages across Los Angeles County
-          and the role of low pay and burnout.
+    /* HEADER AND NAVIGATION */
+
+    header {
+      padding: 34px 0 0;
+    }
+
+    .site-name {
+      color: var(--text);
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 27px;
+      margin-top: 27px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 0 0 12px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      background: transparent;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .tab:hover,
+    .tab[aria-selected="true"] {
+      color: var(--text);
+    }
+
+    .tab[aria-selected="true"] {
+      border-bottom-color: var(--accent);
+    }
+
+    main {
+      min-height: 65vh;
+      padding: 53px 0 75px;
+    }
+
+    h1 {
+      margin: 0 0 35px;
+      font-size: clamp(32px, 6vw, 40px);
+      font-weight: normal;
+      letter-spacing: -1.1px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    p {
+      margin: 0 0 19px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .contact {
+      margin-top: 32px;
+    }
+
+    /* SELECTED WORKS */
+
+    #works {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    #works .writing-heading {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin: 0 0 55px;
+      color: var(--text);
+    }
+
+    .writing-category {
+      margin-bottom: 48px;
+    }
+
+    .writing-category h2 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: normal;
+      margin: 0 0 22px;
+      color: var(--text);
+    }
+
+    .writing-item {
+      margin-bottom: 23px;
+    }
+
+    .writing-item a {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .writing-item a:hover {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    .writing-meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+      letter-spacing: 0.2px;
+    }
+
+    /* DATA PROJECT GRID */
+
+    #data {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    #data .data-heading {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin: 0 0 40px;
+      color: var(--text);
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .data-card {
+      display: block;
+      min-width: 0;
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--text);
+      background: #fff;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .data-card:hover {
+      background: #f0f4f8;
+      border-color: var(--accent);
+    }
+
+    .data-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f1f0ed;
+      overflow: hidden;
+    }
+
+    .data-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .data-card-content {
+      padding: 21px;
+    }
+
+    .data-card h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: normal;
+      line-height: 1.35;
+      margin: 0 0 9px;
+      color: var(--text);
+    }
+
+    .data-publication {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #777;
+      margin: 0 0 15px;
+    }
+
+    .data-description {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+      margin: 0 0 18px;
+    }
+
+    .data-tools {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #888;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 20px 0 30px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      header {
+        padding-top: 25px;
+      }
+
+      main {
+        padding-top: 39px;
+      }
+
+      nav {
+        gap: 22px;
+      }
+
+      #works .writing-heading,
+      #data .data-heading {
+        font-size: 32px;
+      }
+
+      #works .writing-heading {
+        margin-bottom: 40px;
+      }
+
+      .writing-category h2 {
+        font-size: 19px;
+      }
+
+      .writing-item a {
+        font-size: 16px;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .data-card-content {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      nav {
+        gap: 15px;
+      }
+
+      .tab {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="#about" id="home-link">
+        Julietta Bisharyan
+      </a>
+
+      <nav aria-label="Main navigation" role="tablist">
+        <button class="tab" id="about-tab" role="tab"
+          aria-selected="true" aria-controls="about" type="button">
+          About Me
+        </button>
+
+        <button class="tab" id="works-tab" role="tab"
+          aria-selected="false" aria-controls="works" type="button">
+          Reporting
+        </button>
+
+        <button class="tab" id="data-tab" role="tab"
+          aria-selected="false" aria-controls="data" type="button">
+          Data
+        </button>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ABOUT ME -->
+
+      <section id="about" role="tabpanel" aria-labelledby="about-tab">
+
+        <p>
+          Julietta Bisharyan is a reporter based in San Diego.
+          She holds a bachelor’s degree in English from the University of
+          California, Davis and a master’s degree in multimedia journalism
+          from the University of California, Berkeley.
         </p>
-        <p class="data-tools">Data analysis · Education reporting</p>
-      </div>
-    </a>
 
-
-    <!-- PROJECT 2 -->
-    <a class="data-card"
-      href="https://media.journalism.berkeley.edu/projects/2023/20230501_cost-of-teaching/"
-      target="_blank" rel="noopener noreferrer">
-
-      <div class="data-image">
-        <img src="assets/COT.png" alt="The Cost of Teaching interactive project">
-      </div>
-
-      <div class="data-card-content">
-        <h3>The Cost of Teaching</h3>
-        <p class="data-publication">UC Berkeley Graduate School of Journalism · May 2023</p>
-        <p class="data-description">
-          An interactive choose-your-own-adventure project exploring
-          the financial realities of becoming a teacher.
+        <p>
+          Her work has been published in The Modesto Bee, The Sacramento Bee,
+          East Bay Times, Berkeleyside, AfroLA and Armenian Weekly.
         </p>
-        <p class="data-tools">Interactive storytelling · Data visualization</p>
-      </div>
-    </a>
 
-
-    <!-- PROJECT 3 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/politics-government/article316693413.html?giftCode=ffc8f04084cb90c768a859477a849c1b731a7d78c7e3c110e83a39c23b60e26e"
-      target="_blank" rel="noopener noreferrer">
-
-      <div class="data-image">
-        <img src="assets/Complaints.png" alt="Data visualization about complaints from Modesto residents">
-      </div>
-
-      <div class="data-card-content">
-        <h3>What are Modesto residents complaining about?</h3>
-        <p class="data-publication">The Modesto Bee · July 2026</p>
-        <p class="data-description">
-          Using complaint records to examine patterns.
+        <p class="contact">
+          Email:
+          <a href="mailto:jsbisharyan@gmail.com">jsbisharyan@gmail.com</a>
         </p>
-        <p class="data-tools">Public records · Data analysis</p>
-      </div>
-    </a>
+
+      </section>
 
 
-    <!-- PROJECT 4 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/politics-government/article314810141.html?giftCode=2dcde035bad631c3ad6c3efb19e7a61cd8071fbdf9f101f7ccdeab6c98d42620"
-      target="_blank" rel="noopener noreferrer">
+      <!-- SELECTED WORKS -->
 
-      <div class="data-image">
-        <img src="assets/Compensation.png" alt="Data visualization about Modesto city employee compensation">
-      </div>
+      <section id="works" role="tabpanel"
+        aria-labelledby="works-tab" hidden>
 
-      <div class="data-card-content">
-        <h3>Who makes the most at Modesto city hall?</h3>
-        <p class="data-publication">The Modesto Bee · February 2026</p>
-        <p class="data-description">
-          Analyzing public employee compensation to identify
-          the highest-paid city workers.
-        </p>
-        <p class="data-tools">Public records · Payroll data</p>
-      </div>
-    </a>
+        <h1 class="writing-heading">Selected Writing</h1>
 
+        <!-- INVESTIGATIONS -->
 
-    <!-- PROJECT 5 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/article315256014.html?giftCode=fbf7b287f6c19083b723831ebd90169284033b45eec2462765921b7b1770ac60"
-      target="_blank" rel="noopener noreferrer">
+        <div class="writing-category">
+          <h2>Investigations</h2>
 
-      <div class="data-image">
-        <img src="assets/ICEarrests.png" alt="Data visualization about ICE arrests in Stanislaus County">
-      </div>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/crime/article315577383.html?giftCode=86c4acd1f83c5da3212b84d3e534f335ec6e8eb8e0eaedf4faa5dd6863b15084" target="_blank" rel="noopener noreferrer">
+              How did Modesto school district not hear of principal’s sex charges for over a year?
+            </a>
+            <p class="writing-meta">The Modesto Bee · April 2026</p>
+          </div>
 
-      <div class="data-card-content">
-        <h3>ICE arrested 18 in Stanislaus County over last 6 months.</h3>
-        <p class="data-publication">The Modesto Bee · 2026</p>
-        <p class="data-description">
-          Analyzing local immigration enforcement activity
-          through arrest data.
-        </p>
-        <p class="data-tools">Data analysis · Immigration reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.mercedsunstar.com/news/local/education/uc-merced/article315497840.html?giftCode=fb421cea63dc86966c5d6d9789bf1b4e9b94f38d7a2bd9bb918bdc4207d5a3f7" target="_blank" rel="noopener noreferrer">
+              Records show UC Merced police are sharing license plate data with Border Patrol
+            </a>
+            <p class="writing-meta">Merced Sun-Star · April 2026</p>
+          </div>
 
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/politics-government/article310501180.html?giftCode=a2d2523eba2e94d11aa9b383001210de091cf3036abf3912fcc28ef92f6cea22" target="_blank" rel="noopener noreferrer">
+              Sen. Marie Alvarado-Gil reprimanded for retaliation against Stanislaus supervisor
+            </a>
+            <p class="writing-meta">The Modesto Bee · July 2025</p>
+          </div>
 
-    <!-- PROJECT 6 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/article293681174.html?giftCode=41d7c210d599f42cc7f9fd04aa7dcaf42935c5b69600a9dc4b4b5fa28ee53461"
-      target="_blank" rel="noopener noreferrer">
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article302720644.html?giftCode=99d2536649dfe09ad935512d0fa741069fcc490b2ac44cc7dd1d5164c833e7b1" target="_blank" rel="noopener noreferrer">
+              Ceres mobile home park to get power back after months without, settlement says
+            </a>
+            <p class="writing-meta">The Modesto Bee · April 2025</p>
+          </div>
 
-      <div class="data-image">
-        <img src="assets/UOF.png" alt="Data visualization about use-of-force cases in Stanislaus County">
-      </div>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article293681174.html?giftCode=41d7c210d599f42cc7f9fd04aa7dcaf42935c5b69600a9dc4b4b5fa28ee53461" target="_blank" rel="noopener noreferrer">
+              Black people in Stanislaus County over-represented in use of force cases by Sheriff’s Office
+            </a>
+            <p class="writing-meta">The Modesto Bee · October 2024</p>
+          </div>
 
-      <div class="data-card-content">
-        <h3>Black people in Stanislaus County over-represented in use of force cases by Sheriff’s Office</h3>
-        <p class="data-publication">The Modesto Bee · 2024</p>
-        <p class="data-description">
-          Analyzing law enforcement use-of-force records to
-          investigate racial disparities in Stanislaus County.
-        </p>
-        <p class="data-tools">Data analysis · Accountability reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/crime/article292007355.html?giftCode=c909247f9a36760ac370136510f0c585cd63dc3c0d18f9293941297dcdb81ffc" target="_blank" rel="noopener noreferrer">
+              Modesto police arrest Black juveniles at over 4 times their population rate, data shows
+            </a>
+            <p class="writing-meta">The Modesto Bee · September 2024</p>
+          </div>
 
+          <div class="writing-item">
+            <a href="https://www.sacbee.com/entertainment/arts-culture/article263900537.html?giftCode=7d8eec5bbdb1963b0195640312be1b05ab9e4e200848dcab4db66bdeec2863d6" target="_blank" rel="noopener noreferrer">
+              ‘It was gone.’ Why do Sacramento murals disappear and what rights do artists have?
+            </a>
+            <p class="writing-meta">The Sacramento Bee · August 2022</p>
+          </div>
 
-    <!-- PROJECT 7 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/turlock/article316349082.html?giftCode=81a1c23d74f4b762823f0bc8c56d005a0ac3fcdb957b837497649972c396bb2e"
-      target="_blank" rel="noopener noreferrer">
-
-      <div class="data-image">
-        <img src="assets/TurlockCityManagers.png" alt="Data visualization about Turlock city manager turnover">
-      </div>
-
-      <div class="data-card-content">
-        <h3>Turlock City Manager Turnover</h3>
-        <p class="data-publication">The Modesto Bee · 2026</p>
-        <p class="data-description">
-          Examining high turnover among high-ranking positions in local government.
-        </p>
-        <p class="data-tools">Public records · Government accountability</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.sacbee.com/news/local/article262979813.html?giftCode=fae99770d1efd1bd4cabe9009b4c943b363295ba0e10c2958ccc43487d99d589" target="_blank" rel="noopener noreferrer">
+              Why do so many people fail the California DMV written exam?
+            </a>
+            <p class="writing-meta">The Sacramento Bee · July 2022</p>
+          </div>
+        </div>
 
 
-    <!-- PROJECT 8 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/crime/article313927363.html?giftCode=5016cb1f2645a0a1c74ca6b497fd2bd6bd0c8cef342f7261af2517fd186f3b07"
-      target="_blank" rel="noopener noreferrer">
+        <!-- ENVIRONMENT -->
 
-      <div class="data-image">
-        <img src="assets/hatecrimes.png" alt="Data visualization about hate crime trends in Stanislaus County">
-      </div>
+        <div class="writing-category">
+          <h2>Environment</h2>
 
-      <div class="data-card-content">
-        <h3>While hate crimes were up in the state, Stanislaus County was at a 10-year low</h3>
-        <p class="data-publication">The Modesto Bee · 2025</p>
-        <p class="data-description">
-          Using crime data to examine hate crime trends and patterns.
-        </p>
-        <p class="data-tools">Data analysis · Crime reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article315213763.html?giftCode=44522b3e1bebc2cba2758460c63d2862f621551f38713761c5eff66659fa7fa0" target="_blank" rel="noopener noreferrer">
+              Patterson parents raise concerns about student safety after school herbicide spraying
+            </a>
+            <p class="writing-meta">The Modesto Bee · March 2026</p>
+          </div>
 
+          <div class="writing-item">
+            <a href="https://www.modbee.com/living/health-fitness/article312908189.html?giftCode=92bf1f2a2bde91e9980c9c998ec03a83b3adee7e69662a00b11615a7cb3628a6" target="_blank" rel="noopener noreferrer">
+              Pesticides waft near Stanislaus County schools. Which are at highest risk?
+            </a>
+            <p class="writing-meta">The Modesto Bee · November 2025</p>
+          </div>
 
-    <!-- PROJECT 9 -->
-    <a class="data-card"
-      href="https://www.modbee.com/living/health-fitness/article312908189.html?giftCode=92bf1f2a2bde91e9980c9c998ec03a83b3adee7e69662a00b11615a7cb3628a6"
-      target="_blank" rel="noopener noreferrer">
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/business/agriculture/article306010386.html?giftCode=ed1542d964f57c6cabb24d0fbc7d31ef51035bc8ad5ffc6dfc24bc7ac8df3afc" target="_blank" rel="noopener noreferrer">
+              More than 100 schools in Stanislaus County face pesticide risks. What can be done?
+            </a>
+            <p class="writing-meta">The Modesto Bee · May 2025</p>
+          </div>
 
-      <div class="data-image">
-        <img src="assets/PesticideWaft.png" alt="Data visualization about pesticide exposure near Stanislaus County schools">
-      </div>
-
-      <div class="data-card-content">
-        <h3>Pesticides waft near Stanislaus County schools. Which are at highest risk?</h3>
-        <p class="data-publication">The Modesto Bee · 2025</p>
-        <p class="data-description">
-          Investigating pesticide exposure near schools
-          using data.
-        </p>
-        <p class="data-tools">Data analysis · Environmental reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article284360304.html?giftCode=21d55fe5ea30b111cc14dd28c1fb045cdd848753306768f9e5fcc0babf11892b" target="_blank" rel="noopener noreferrer">
+              California’s pilot pesticide notification system troubles growers and residents alike
+            </a>
+            <p class="writing-meta">The Modesto Bee · February 2024</p>
+          </div>
+        </div>
 
 
-    <!-- PROJECT 10 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/crime/article312073845.html?giftCode=bd329ea90c0cdc4686442e64153101ba3c2b36ceeefb24dce1bdf7ee2b487816"
-      target="_blank" rel="noopener noreferrer">
+        <!-- LABOR -->
 
-      <div class="data-image">
-        <img src="assets/ICEtransfers.png" alt="Data visualization about Stanislaus County jail transfers to ICE">
-      </div>
+        <div class="writing-category">
+          <h2>Labor</h2>
 
-      <div class="data-card-content">
-        <h3>Under Trump, Stanislaus jail transfers to ICE are back</h3>
-        <p class="data-publication">The Modesto Bee · 2025</p>
-        <p class="data-description">
-          Tracking immigration enforcement activity through
-          transfer records.
-        </p>
-        <p class="data-tools">Data analysis · Public records</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.sacbee.com/news/california/article312117314.html?giftCode=836b927929c8088fa1e5e74eb4a7919bf192e86338322ad0ba24aebd319889a6" target="_blank" rel="noopener noreferrer">
+              BJ’s workers move to form first union over controversial tip-sharing policy
+            </a>
+            <p class="writing-meta">The Sacramento Bee · September 2025</p>
+          </div>
 
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article301118729.html?giftCode=3d4a30e78eab0d950e5e8091d9c230f87eecbaa3842e83fa5a33621880f3cf11" target="_blank" rel="noopener noreferrer">
+              Employees at Modesto company seek nearly $629K from owner in unpaid wages. More come forward
+            </a>
+            <p class="writing-meta">The Modesto Bee · March 2025</p>
+          </div>
 
-    <!-- PROJECT 11 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/crime/article294352494.html?giftCode=0fb4e8b1576b469d20861735eee99cf40c1b54c282e1289832862a73731774e3"
-      target="_blank" rel="noopener noreferrer">
-
-      <div class="data-image">
-        <img src="images/ripa.png" alt="Data visualization about Modesto police traffic stop data">
-      </div>
-
-      <div class="data-card-content">
-        <h3>Modesto police couldn’t analyze traffic stop data, so The Bee did it</h3>
-        <p class="data-publication">The Modesto Bee · 2024</p>
-        <p class="data-description">
-          Reporting on local policing data collected under
-          California's RIPA requirements.
-        </p>
-        <p class="data-tools">Data analysis · Policy reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article284591255.html?giftCode=8bf27cf9268fac95e9dbaaadccd36622341ada701213e3f5e5a0623263e0b239" target="_blank" rel="noopener noreferrer">
+              Workers allege union busting, file labor complaint against Modesto-area insulation plant
+            </a>
+            <p class="writing-meta">The Modesto Bee · January 2024</p>
+          </div>
+        </div>
 
 
-    <!-- PROJECT 12 -->
-    <a class="data-card"
-      href="https://www.modbee.com/news/local/education/article285163187.html?giftCode=64c407680c40f4053a5b2e95b40bec9a3a4e55019d15d4856bef00326e2715e3"
-      target="_blank" rel="noopener noreferrer">
+        <!-- POLICY -->
 
-      <div class="data-image">
-        <img src="assets/CollegeDemographics.png" alt="Data visualization about college faculty diversity">
-      </div>
+        <div class="writing-category">
+          <h2>Policy</h2>
 
-      <div class="data-card-content">
-        <h3>Stanislaus County colleges behind in faculty diversity</h3>
-        <p class="data-publication">The Modesto Bee · 2024</p>
-        <p class="data-description">
-          Examining college demographics and the gap between
-          student and faculty diversity.
-        </p>
-        <p class="data-tools">Data analysis · Education reporting</p>
-      </div>
-    </a>
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/politics-government/article316328721.html?giftCode=9f51f6aaf97bbd4590df1d4b49a27957837e4e08cf0e4dcb38e80e11ec2bed8b" target="_blank" rel="noopener noreferrer">
+              Modesto will temporarily stop enforcing mask-ban ordinance at protests, judge rules
+            </a>
+            <p class="writing-meta">The Modesto Bee · July 2026</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/education/article315497347.html?giftCode=1e524d905436fc59d84f9b901cbb6cb7e531ebe0487724fae1b73f04478ffe19" target="_blank" rel="noopener noreferrer">
+              Transitional-kindergarten expansion strains Stanislaus County childcare providers
+            </a>
+            <p class="writing-meta">The Modesto Bee · April 2026</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.sacbee.com/sports/high-school/article313213672.html?giftCode=dc9035339b8cdaed548bd213f19736ca24a3534fe72797e5bdbcb6be62bd3c47" target="_blank" rel="noopener noreferrer">
+              CA student athlete’s case leads CIF to revise rules on immigration documents
+            </a>
+            <p class="writing-meta">The Sacramento Bee · November 2025</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article312123351.html?giftCode=6b8e4a1c4e4737bce11955911f074da02a9531c0fd9e066c17580de2d7b31146" target="_blank" rel="noopener noreferrer">
+              California law could end Stanislaus County health program that helps immigrants
+            </a>
+            <p class="writing-meta">The Modesto Bee · September 2025</p>
+          </div>
+        </div>
+
+
+        <!-- EDUCATION -->
+
+        <div class="writing-category">
+          <h2>Education</h2>
+
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/article301944214.html?giftCode=c4df122aa76eb2a9182807a2886b3755bcd67815977613a6f7813eadca35626c" target="_blank" rel="noopener noreferrer">
+              Childcare businesses are growing in Stanislaus County. Cuts to federal funding may hinder that
+            </a>
+            <p class="writing-meta">The Modesto Bee · May 2025</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.modbee.com/news/local/education/article286881790.html?giftCode=e98d8511e99c95a3c74e1e63bb5f3cbea7e3dcdec25c6b25790611b20180382b" target="_blank" rel="noopener noreferrer">
+              English learner students with special needs face challenges amid teacher shortages
+            </a>
+            <p class="writing-meta">The Modesto Bee · March 2024</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://afrolanews.org/2023/09/l-a-teachers-propose-salary-incentives-support-systems-to-increase-retention/" target="_blank" rel="noopener noreferrer">
+              L.A. teachers propose salary incentives, support systems to increase retention
+            </a>
+            <p class="writing-meta">AfroLA News · September 2023</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://afrolanews.org/2023/09/leaving-for-greener-pastures-why-south-san-francisco-high-school-teachers-move-to-neighboring-districts/" target="_blank" rel="noopener noreferrer">
+              Leaving for greener pastures: Why South San Francisco High School teachers move to neighboring districts
+            </a>
+            <p class="writing-meta">AfroLA News · September 2023</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/" target="_blank" rel="noopener noreferrer">
+              L.A. County doesn't have enough teachers. Low pay and burnout aren't helping the problem
+            </a>
+            <p class="writing-meta">AfroLA News · August 2023</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://oaklandnorth.net/2022/03/22/oakland-school-hunger-strike-political-tool/" target="_blank" rel="noopener noreferrer">
+              Oakland school hunger strike becomes a political tool
+            </a>
+            <p class="writing-meta">Oakland North · March 2022</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://richmondconfidential.org/2022/04/25/richmond-wccusd-substitute-teacher-shortage/" target="_blank" rel="noopener noreferrer">
+              WCCUSD substitute teacher shortage hurting students, burning out teachers
+            </a>
+            <p class="writing-meta">Richmond Confidential · April 2022</p>
+          </div>
+        </div>
+
+
+        <!-- BUSINESS -->
+
+        <div class="writing-category">
+          <h2>Business</h2>
+
+          <div class="writing-item">
+            <a href="https://www.sacbee.com/news/business/article264308246.html?giftCode=f7482389028efbe9e096b66a69b1a4fd5d2405645b02d1552f3de353618d8eb7" target="_blank" rel="noopener noreferrer">
+              Land Park Ski &amp; Sports sees impact of Russia-Ukraine war on equipment supplies
+            </a>
+            <p class="writing-meta">The Sacramento Bee · August 2022</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.eastbaytimes.com/2022/02/20/berkeley-and-emeryville-a-tale-of-two-marinas/" target="_blank" rel="noopener noreferrer">
+              Berkeley and Emeryville: A tale of two marinas
+            </a>
+            <p class="writing-meta">East Bay Times · February 2022</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.berkeleyside.org/2021/12/27/why-some-boat-owners-consider-leaving-the-berkeley-marina" target="_blank" rel="noopener noreferrer">
+              Why some boat owners consider leaving the Berkeley Marina
+            </a>
+            <p class="writing-meta">Berkeleyside · December 2021</p>
+          </div>
+
+          <div class="writing-item">
+            <a href="https://www.berkeleyside.org/2021/10/22/berkeley-marina-ferry-plan-raises-concern-among-recreational-users" target="_blank" rel="noopener noreferrer">
+              Berkeley Marina ferry plan raises concern among recreational users
+            </a>
+            <p class="writing-meta">Berkeleyside · October 2021</p>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- DATA PROJECTS -->
+
+      <section id="data" role="tabpanel"
+        aria-labelledby="data-tab" hidden>
+
+        <h1 class="data-heading">Data &amp; Projects</h1>
+
+        <div class="data-grid">
+
+          <!-- PROJECT 1 -->
+
+          <a class="data-card"
+            href="https://afrolanews.org/2023/08/l-a-county-doesnt-have-enough-teachers-low-pay-and-burnout-arent-helping-the-problem/"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/LACounty.png" alt="Data visualization about teacher shortages in Los Angeles County">
+            </div>
+
+            <div class="data-card-content">
+              <h3>L.A. County doesn’t have enough teachers. Low pay and burnout aren’t helping the problem</h3>
+              <p class="data-publication">AfroLA News · August 2023</p>
+              <p class="data-description">
+                Examining teacher shortages across Los Angeles County
+                and the role of low pay and burnout.
+              </p>
+              <p class="data-tools">Data analysis · Education reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 2 -->
+
+          <a class="data-card"
+            href="https://media.journalism.berkeley.edu/projects/2023/20230501_cost-of-teaching/"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/COT.png" alt="The Cost of Teaching interactive project">
+            </div>
+
+            <div class="data-card-content">
+              <h3>The Cost of Teaching</h3>
+              <p class="data-publication">UC Berkeley Graduate School of Journalism · May 2023</p>
+              <p class="data-description">
+                An interactive choose-your-own-adventure project exploring
+                the financial realities of becoming a teacher.
+              </p>
+              <p class="data-tools">Interactive storytelling · Data visualization</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 3 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/politics-government/article316693413.html?giftCode=ffc8f04084cb90c768a859477a849c1b731a7d78c7e3c110e83a39c23b60e26e"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/Complaints.png" alt="Data visualization about complaints from Modesto residents">
+            </div>
+
+            <div class="data-card-content">
+              <h3>What are Modesto residents complaining about?</h3>
+              <p class="data-publication">The Modesto Bee · July 2026</p>
+              <p class="data-description">
+                Using complaint records to examine patterns.
+              </p>
+              <p class="data-tools">Public records · Data analysis</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 4 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/politics-government/article314810141.html?giftCode=2dcde035bad631c3ad6c3efb19e7a61cd8071fbdf9f101f7ccdeab6c98d42620"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/Compensation.png" alt="Data visualization about Modesto city employee compensation">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Who makes the most at Modesto city hall?</h3>
+              <p class="data-publication">The Modesto Bee · February 2026</p>
+              <p class="data-description">
+                Analyzing public employee compensation to identify
+                the highest-paid city workers.
+              </p>
+              <p class="data-tools">Public records · Payroll data</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 5 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/article315256014.html?giftCode=fbf7b287f6c19083b723831ebd90169284033b45eec2462765921b7b1770ac60"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/ICEarrests.png" alt="Data visualization about ICE arrests in Stanislaus County">
+            </div>
+
+            <div class="data-card-content">
+              <h3>ICE arrested 18 in Stanislaus County over last 6 months.</h3>
+              <p class="data-publication">The Modesto Bee · 2026</p>
+              <p class="data-description">
+                Analyzing local immigration enforcement activity
+                through arrest data.
+              </p>
+              <p class="data-tools">Data analysis · Immigration reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 6 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/article293681174.html?giftCode=41d7c210d599f42cc7f9fd04aa7dcaf42935c5b69600a9dc4b4b5fa28ee53461"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/UOF.png" alt="Data visualization about use-of-force cases in Stanislaus County">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Black people in Stanislaus County over-represented in use of force cases by Sheriff’s Office</h3>
+              <p class="data-publication">The Modesto Bee · 2024</p>
+              <p class="data-description">
+                Analyzing law enforcement use-of-force records to
+                investigate racial disparities in Stanislaus County.
+              </p>
+              <p class="data-tools">Data analysis · Accountability reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 7 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/turlock/article316349082.html?giftCode=81a1c23d74f4b762823f0bc8c56d005a0ac3fcdb957b837497649972c396bb2e"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/TurlockCityManagers.png" alt="Data visualization about Turlock city manager turnover">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Turlock City Manager Turnover</h3>
+              <p class="data-publication">The Modesto Bee · 2026</p>
+              <p class="data-description">
+                Examining high turnover among high-ranking positions in local government.
+              </p>
+              <p class="data-tools">Public records · Government accountability</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 8 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/crime/article313927363.html?giftCode=5016cb1f2645a0a1c74ca6b497fd2bd6bd0c8cef342f7261af2517fd186f3b07"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/hatecrimes.png" alt="Data visualization about hate crime trends in Stanislaus County">
+            </div>
+
+            <div class="data-card-content">
+              <h3>While hate crimes were up in the state, Stanislaus County was at a 10-year low</h3>
+              <p class="data-publication">The Modesto Bee · 2025</p>
+              <p class="data-description">
+                Using crime data to examine hate crime trends and patterns.
+              </p>
+              <p class="data-tools">Data analysis · Crime reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 9 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/living/health-fitness/article312908189.html?giftCode=92bf1f2a2bde91e9980c9c998ec03a83b3adee7e69662a00b11615a7cb3628a6"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/PesticideWaft.png" alt="Data visualization about pesticide exposure near Stanislaus County schools">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Pesticides waft near Stanislaus County schools. Which are at highest risk?</h3>
+              <p class="data-publication">The Modesto Bee · 2025</p>
+              <p class="data-description">
+                Investigating pesticide exposure near schools
+                using data.
+              </p>
+              <p class="data-tools">Data analysis · Environmental reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 10 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/crime/article312073845.html?giftCode=bd329ea90c0cdc4686442e64153101ba3c2b36ceeefb24dce1bdf7ee2b487816"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/ICEtransfers.png" alt="Data visualization about Stanislaus County jail transfers to ICE">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Under Trump, Stanislaus jail transfers to ICE are back</h3>
+              <p class="data-publication">The Modesto Bee · 2025</p>
+              <p class="data-description">
+                Tracking immigration enforcement activity through
+                transfer records.
+              </p>
+              <p class="data-tools">Data analysis · Public records</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 11 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/crime/article294352494.html?giftCode=0fb4e8b1576b469d20861735eee99cf40c1b54c282e1289832862a73731774e3"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="images/ripa.png" alt="Data visualization about Modesto police traffic stop data">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Modesto police couldn’t analyze traffic stop data, so The Bee did it</h3>
+              <p class="data-publication">The Modesto Bee · 2024</p>
+              <p class="data-description">
+                Reporting on local policing data collected under
+                California's RIPA requirements.
+              </p>
+              <p class="data-tools">Data analysis · Policy reporting</p>
+            </div>
+          </a>
+
+
+          <!-- PROJECT 12 -->
+
+          <a class="data-card"
+            href="https://www.modbee.com/news/local/education/article285163187.html?giftCode=64c407680c40f4053a5b2e95b40bec9a3a4e55019d15d4856bef00326e2715e3"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="data-image">
+              <img src="assets/CollegeDemographics.png" alt="Data visualization about college faculty diversity">
+            </div>
+
+            <div class="data-card-content">
+              <h3>Stanislaus County colleges behind in faculty diversity</h3>
+              <p class="data-publication">The Modesto Bee · 2024</p>
+              <p class="data-description">
+                Examining college demographics and the gap between
+                student and faculty diversity.
+              </p>
+              <p class="data-tools">Data analysis · Education reporting</p>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Julietta Bisharyan
+    </footer>
 
   </div>
-</section>
+
+
+  <!-- TAB NAVIGATION -->
+
+  <script>
+    const tabs = {
+      about: document.getElementById("about-tab"),
+      works: document.getElementById("works-tab"),
+      data: document.getElementById("data-tab")
+    };
+
+    const panels = {
+      about: document.getElementById("about"),
+      works: document.getElementById("works"),
+      data: document.getElementById("data")
+    };
+
+    const homeLink = document.getElementById("home-link");
+
+    function showTab(name) {
+      Object.keys(tabs).forEach(function(key) {
+        const isActive = key === name;
+
+        panels[key].hidden = !isActive;
+        tabs[key].setAttribute("aria-selected", String(isActive));
+      });
+
+      history.replaceState(null, "", "#" + name);
+      window.scrollTo(0, 0);
+    }
+
+    tabs.about.addEventListener("click", function() {
+      showTab("about");
+    });
+
+    tabs.works.addEventListener("click", function() {
+      showTab("works");
+    });
+
+    tabs.data.addEventListener("click", function() {
+      showTab("data");
+    });
+
+    homeLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      showTab("about");
+    });
+
+    const initialTab = window.location.hash.replace("#", "");
+
+    if (panels[initialTab]) {
+      showTab(initialTab);
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
